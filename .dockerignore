@@ -1,0 +1,4 @@
+.venv
+./vector-db/descriptions
+./vector-db/chroma.py
+./experiments

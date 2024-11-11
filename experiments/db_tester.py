@@ -1,6 +1,6 @@
 import chromadb.utils.embedding_functions as embedding_functions
 from dotenv import load_dotenv
-from chroma import openai_ef, collection
+from vector_db.chroma import openai_ef, collection
 load_dotenv()
 
 
