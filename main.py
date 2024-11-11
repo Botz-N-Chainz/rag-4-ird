@@ -5,6 +5,8 @@ from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Dict, List
 from web_crawler_and_scraper.crawl_n_scrape import scrape_website
+from web_crawler_and_scraper.format_files import process_files_in_directory
+from web_crawler_and_scraper.description_generator import generate_descriptions
 
 load_dotenv()
 os.environ['LANGCHAIN_TRACING_V2'] = 'true'
@@ -52,6 +54,9 @@ app.add_middleware(
 
 @app.post("/chat")
 async def chat(request: dict):
+    if not os.path.exists("./vector_db/vectorstore"):
+        return {"answer": "Scrape website first"}
+    
     from pprint import pprint
     question = request.get("question")
     thread_id = request.get("thread_id")
@@ -88,5 +93,6 @@ async def web_scrape(request: dict):
     url = request.get("url")
     page_limit = request.get("page_limit")
     scrape_website(url, page_limit)
-    # Your scraping logic here
+    process_files_in_directory()
+    generate_descriptions()
     return {"status": "ok"}

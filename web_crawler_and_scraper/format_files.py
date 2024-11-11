@@ -30,9 +30,13 @@ def remove_href_from_a_tags(html):
     return str(soup)
 
 # Function to process all files in the /scraped_files directory and save them to /formatted_files
-def process_files_in_directory(input_directory, output_directory):
+input_directory = './web_crawler_and_scraper/scraped_files'
+output_directory = './web_crawler_and_scraper/formatted_files'
+
+def process_files_in_directory():
     os.makedirs(output_directory, exist_ok=True)
-    
+    os.makedirs(input_directory, exist_ok=True)
+
     for filename in os.listdir(input_directory):
         input_file_path = os.path.join(input_directory, filename)
         
@@ -51,8 +55,3 @@ def process_files_in_directory(input_directory, output_directory):
             
             with open(output_file_path, 'w', encoding='utf-8') as file:
                 file.write(content)
-
-# Example usage
-input_directory = './web-crawler-and-scraper/scraped_files'
-output_directory = './web-crawler-and-scraper/formatted_files'
-process_files_in_directory(input_directory, output_directory)
