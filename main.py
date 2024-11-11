@@ -83,8 +83,12 @@ async def chat(request: dict):
     pprint(value["generation"])
     return {"answer": value["generation"]}
 
-@app.get("/scrape")
+@app.post("/scrape")
 async def scrape(request: dict):
-    url = request.get("url")
-    scrape_website(url)
-    return {"status": "ok"}
+    try:
+        url = request.get("url")
+        page_limit = request.get("page_limit")
+        scrape_website(url, page_limit)
+        return {"status": "ok"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}

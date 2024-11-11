@@ -1,6 +1,6 @@
 from bs4 import Comment, Doctype
 import re
-from additional_cleaning import clean_unwanted_links, remove_empty_elements
+from web_crawler_and_scraper.additional_cleaning import clean_unwanted_links, remove_empty_elements
 # Main function to clean the soup
 def clean_soup(soup):
     remove_unwanted_elements(soup)

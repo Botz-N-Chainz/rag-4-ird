@@ -10,9 +10,9 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-from clean_html import clean_soup, strip_structure, remove_elements_by_class_pattern, remove_elements_by_id_pattern, remove_unwanted_attributes
-from logger import open_log_files, log_rejection, log_crawled_link
-from init import initialize_directories
+from web_crawler_and_scraper.clean_html import clean_soup, strip_structure, remove_elements_by_class_pattern, remove_elements_by_id_pattern, remove_unwanted_attributes
+from web_crawler_and_scraper.logger import open_log_files, log_rejection, log_crawled_link
+from web_crawler_and_scraper.init import initialize_directories
 from bs4 import BeautifulSoup
 
 # Set a custom process name
@@ -25,7 +25,7 @@ visited = set()
 queue = Queue()
 
 # Global variables
-PAGE_LIMIT = 100  # Set this to an integer to limit the number of pages, or None for no limit
+PAGE_LIMIT = 15  # Set this to an integer to limit the number of pages, or None for no limit
 crawled_count = 0  # Counter for the number of pages crawled
 crawled_count_lock = threading.Lock()  # Lock for safe access to crawled_count
 
@@ -164,8 +164,11 @@ def worker(driver):
         time.sleep(1)  # Be polite
 
 # Main entry point
-def scrape_website(start_url):
+def scrape_website(start_url, page_limit=None):
     # Initialize logs and directories
+    global PAGE_LIMIT
+    if page_limit:
+        PAGE_LIMIT = page_limit
     initialize_directories()
     rejected_log, crawled_log = open_log_files()
 
