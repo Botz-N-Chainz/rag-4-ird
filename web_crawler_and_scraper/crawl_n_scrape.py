@@ -101,7 +101,7 @@ def parse_links(soup, base_url):
 # Save the cleaned HTML to a file
 def save_to_file(url, soup):
     base_filename = urlparse(url).path.replace("/", "_") or "index"
-    filename = f"./scraped_files/{base_filename}.txt"
+    filename = f"./web_crawler_and_scraper/scraped_files/{base_filename}.txt"
 
     # Check if file exists, and create unique filename if necessary
     if os.path.exists(filename):

@@ -23,32 +23,32 @@ app.add_middleware(
 )
 
 
-@app.get("/")
-async def test():
-    from pprint import pprint
+# @app.get("/")
+# async def test():
+#     from pprint import pprint
 
-    config = {"configurable": {"thread_id": "1234"}}
-    # Run
-    inputs = {
-        "question": "How to fill the income tax return?",
-        # "chat_history": chat_histories.get(config["configurable"]["thread_id"], [])
-    }
+#     config = {"configurable": {"thread_id": "1234"}}
+#     # Run
+#     inputs = {
+#         "question": "How to fill the income tax return?",
+#         # "chat_history": chat_histories.get(config["configurable"]["thread_id"], [])
+#     }
 
-    for output in rag_app.stream(inputs, config=config):
-        for key, value in output.items():
-            # Node
-            pprint(f"Node '{key}':")
-            # Optional: print full state at each node
-            pprint(value, indent=2, width=80, depth=None)
-        pprint("\n---\n")
+#     for output in rag_app.stream(inputs, config=config):
+#         for key, value in output.items():
+#             # Node
+#             pprint(f"Node '{key}':")
+#             # Optional: print full state at each node
+#             pprint(value, indent=2, width=80, depth=None)
+#         pprint("\n---\n")
 
-    # Final generation
-    pprint(value["generation"])
-    thread_id = config["configurable"]["thread_id"]
-    if thread_id not in chat_histories:
-        chat_histories[thread_id] = []
-    chat_histories[thread_id].append(value["generation"])
-    return value["generation"]
+#     # Final generation
+#     pprint(value["generation"])
+#     thread_id = config["configurable"]["thread_id"]
+#     if thread_id not in chat_histories:
+#         chat_histories[thread_id] = []
+#     chat_histories[thread_id].append(value["generation"])
+#     return value["generation"]
 
 @app.post("/chat")
 async def chat(request: dict):
@@ -83,12 +83,10 @@ async def chat(request: dict):
     pprint(value["generation"])
     return {"answer": value["generation"]}
 
-@app.post("/scrape")
-async def scrape(request: dict):
-    try:
-        url = request.get("url")
-        page_limit = request.get("page_limit")
-        scrape_website(url, page_limit)
-        return {"status": "ok"}
-    except Exception as e:
-        return {"status": "error", "message": str(e)}
+@app.post("/web_scrape")
+async def web_scrape(request: dict):
+    url = request.get("url")
+    page_limit = request.get("page_limit")
+    scrape_website(url, page_limit)
+    # Your scraping logic here
+    return {"status": "ok"}
