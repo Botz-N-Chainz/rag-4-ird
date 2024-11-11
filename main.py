@@ -4,13 +4,15 @@ import os
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Dict, List
-app = FastAPI()
-chat_histories: Dict[str, List[str]] = {}
+from web_crawler_and_scraper.crawl_n_scrape import scrape_website
 
 load_dotenv()
 os.environ['LANGCHAIN_TRACING_V2'] = 'true'
 os.environ['LANGCHAIN_API_KEY'] = os.getenv('LANGCHAIN_API_KEY')  
 os.environ['OPENAI_API_KEY'] = os.getenv('OPENAI_API_KEY')
+
+app = FastAPI()
+chat_histories: Dict[str, List[str]] = {}
 
 app.add_middleware(
     CORSMiddleware,
@@ -80,3 +82,9 @@ async def chat(request: dict):
     # Final generation
     pprint(value["generation"])
     return {"answer": value["generation"]}
+
+@app.get("/scrape")
+async def scrape(request: dict):
+    url = request.get("url")
+    scrape_website(url)
+    return {"status": "ok"}

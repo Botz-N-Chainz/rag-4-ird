@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-directory = "./vector-db/descriptions"
+directory = "./vector_db/descriptions"
 docs = []
-client = chromadb.PersistentClient(path="./vector-db/vectorstore")
+client = chromadb.PersistentClient(path="./vector_db/vectorstore")
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
                 api_key=os.getenv("OPENAI_API_KEY"),
             )
