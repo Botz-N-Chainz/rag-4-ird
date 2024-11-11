@@ -3,7 +3,7 @@ import chromadb
 import os
 
 # Initialize Chroma Client (persistent storage)
-client = chromadb.PersistentClient(path="./vector-db/vectorstore")
+client = chromadb.PersistentClient(path="./vector_db/vectorstore")
 
 # Set up OpenAI embedding function
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(

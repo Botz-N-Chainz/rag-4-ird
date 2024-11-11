@@ -2,7 +2,7 @@ import chromadb.utils.embedding_functions as embedding_functions
 import chromadb
 import os
 
-client = chromadb.PersistentClient(path="./vector-db/vectorstore")
+client = chromadb.PersistentClient(path="./vector_db/vectorstore")
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
                 api_key=os.getenv("OPENAI_API_KEY"),
             )

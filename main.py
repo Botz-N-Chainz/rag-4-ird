@@ -54,7 +54,7 @@ app.add_middleware(
 
 @app.post("/chat")
 async def chat(request: dict):
-    if not os.path.exists("./vector_db/vectorstore"):
+    if not os.path.exists("./vector_db/vectorstore") and not os.path.exists("./vector_db/descriptions"):
         return {"answer": "Scrape website first"}
     
     from pprint import pprint

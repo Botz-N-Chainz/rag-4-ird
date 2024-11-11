@@ -10,16 +10,17 @@ from dotenv import load_dotenv
 load_dotenv()
 
 directory = "./vector_db/descriptions"
-docs = []
-if not os.path.exists("./vector_db/vectorstore"):
-    os.makedirs("./vector_db/vectorstore")
-client = chromadb.PersistentClient(path="./vector_db/vectorstore")
-openai_ef = embedding_functions.OpenAIEmbeddingFunction(
-                api_key=os.getenv("OPENAI_API_KEY"),
-            )
-collection = client.get_or_create_collection(name="my_collection", embedding_function=openai_ef)
 
 def process_descriptions():
+    print("Chroma Vector Database Processing Started")
+    docs = []
+    if not os.path.exists("./vector_db/vectorstore"):
+        os.makedirs("./vector_db/vectorstore")
+    client = chromadb.PersistentClient(path="./vector_db/vectorstore")
+    openai_ef = embedding_functions.OpenAIEmbeddingFunction(
+                    api_key=os.getenv("OPENAI_API_KEY"),
+                )
+    collection = client.get_or_create_collection(name="my_collection", embedding_function=openai_ef)
     # Load JSON files from descriptions directory
     for filename in os.listdir(directory):
         if filename.endswith(".json"):
