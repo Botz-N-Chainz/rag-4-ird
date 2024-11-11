@@ -54,10 +54,10 @@ def extract_url(content):
 directory = "./web_crawler_and_scraper/formatted_files"
 checkpoint_file = "checkpoint.txt"
 description_directory = "./vector_db/descriptions"
-if not os.path.exists(description_directory):
-    os.makedirs(description_directory)
 
 def generate_descriptions():
+    if not os.path.exists(description_directory):
+        os.makedirs(description_directory)
     # Load last processed file from checkpoint
     if os.path.exists(checkpoint_file):
         with open(checkpoint_file, "r") as f:

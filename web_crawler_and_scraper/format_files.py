@@ -34,6 +34,7 @@ input_directory = './web_crawler_and_scraper/scraped_files'
 output_directory = './web_crawler_and_scraper/formatted_files'
 
 def process_files_in_directory():
+    print("Formatting files started")
     os.makedirs(output_directory, exist_ok=True)
     os.makedirs(input_directory, exist_ok=True)
 

@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from RAG.graph import app as rag_app
 import os
+from pprint import pprint
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Dict, List
@@ -25,58 +26,33 @@ app.add_middleware(
 )
 
 
-# @app.get("/")
-# async def test():
-#     from pprint import pprint
+@app.get("/")
+async def test():
+    config = {"configurable": {"thread_id": "1234"}}
+    inputs = {
+        "question": "How to fill the income tax return?",
+    }
+    for output in rag_app.stream(inputs, config=config):
+        for key, value in output.items():
+            # Node
+            pprint(f"Node '{key}':")
+            pprint(value, indent=2, width=80, depth=None)
+        pprint("\n---\n")
 
-#     config = {"configurable": {"thread_id": "1234"}}
-#     # Run
-#     inputs = {
-#         "question": "How to fill the income tax return?",
-#         # "chat_history": chat_histories.get(config["configurable"]["thread_id"], [])
-#     }
-
-#     for output in rag_app.stream(inputs, config=config):
-#         for key, value in output.items():
-#             # Node
-#             pprint(f"Node '{key}':")
-#             # Optional: print full state at each node
-#             pprint(value, indent=2, width=80, depth=None)
-#         pprint("\n---\n")
-
-#     # Final generation
-#     pprint(value["generation"])
-#     thread_id = config["configurable"]["thread_id"]
-#     if thread_id not in chat_histories:
-#         chat_histories[thread_id] = []
-#     chat_histories[thread_id].append(value["generation"])
-#     return value["generation"]
+    pprint(value["generation"])   
+    return value["generation"]
 
 @app.post("/chat")
 async def chat(request: dict):
-    if not os.path.exists("./vector_db/vectorstore") and not os.path.exists("./vector_db/descriptions"):
+    if not (os.path.exists("./vector_db/vectorstore") and os.path.exists("./vector_db/descriptions")):
         return {"answer": "Scrape website first"}
     
-    from pprint import pprint
     question = request.get("question")
     thread_id = request.get("thread_id")
-
-    language = request.get("language", "en")
-
-    language_prompt = ""
-    if language == "si":
-        language_prompt = "Answer in Sinhala, "
-    elif language == "ta":
-        language_prompt = "Answer in Tamil, "
-    elif language == "en":
-        language_prompt = "Answer in English, "
-
-    print(language_prompt + question)
-
+    print(question)
     inputs = {
-        "question": language_prompt + question
+        "question": question
     }
-
     config = {"configurable": {"thread_id": thread_id}}
     for output in rag_app.stream(inputs, config=config):
         for key, value in output.items():
@@ -84,7 +60,6 @@ async def chat(request: dict):
             pprint(value, indent=2, width=80, depth=None)
         pprint("\n---\n")
 
-    # Final generation
     pprint(value["generation"])
     return {"answer": value["generation"]}
 

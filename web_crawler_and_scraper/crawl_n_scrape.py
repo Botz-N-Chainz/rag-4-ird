@@ -165,6 +165,7 @@ def worker(driver):
 
 # Main entry point
 def scrape_website(start_url, page_limit=None):
+    print("Scraping website started")
     # Initialize logs and directories
     global PAGE_LIMIT
     if page_limit:
