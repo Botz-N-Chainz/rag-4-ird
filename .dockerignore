@@ -7,3 +7,4 @@
 ./checkpoint.txt
 *__pycache__
 ./experiments
+.env
