@@ -28,8 +28,12 @@ def process_descriptions():
                 data = json.load(file)
                 link = data.get("link")
                 description_data = json.loads(data.get("description", "{}"))
-                title = description_data.get("title", "Untitled")
-                actions = description_data.get("actions", [])
+                try:
+                    title = description_data.get("title", "Untitled")
+                    actions = description_data.get("actions", [])
+                except:
+                    title = "Untitled"
+                    actions = []
                 
                 # Join actions into a single text for chunking if necessary
                 description_text = " ".join(actions)
@@ -38,6 +42,10 @@ def process_descriptions():
                 doc = Document(page_content=description_text, metadata={"link": link, "title": title, "filename": filename})
                 docs.append(doc)
 
+    if len(docs) == 0:
+        print("No documents found in the descriptions directory.")
+        return
+    
     # Split documents into chunks if larger than 500 characters
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
@@ -57,5 +65,5 @@ def process_descriptions():
     documents=documents,
     metadatas=metadatas,
     ids=ids
-)
-print("Documents processed and stored in Chroma vector database.")
+    )
+    print("Documents processed and stored in Chroma vector database.")

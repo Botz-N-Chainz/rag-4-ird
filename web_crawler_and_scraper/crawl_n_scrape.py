@@ -66,7 +66,7 @@ def parse_links(soup, base_url):
     links = set()
     rejected_links = []
     required_params = {"lang": "en"}  # Only consider links with 'lang=en'
-    rejected_extensions = ['.pdf', '.doc', '.docx', '.xls', '.xlsx', '.XLSX', '.zip', '.rar', '.7z','.xlsm']
+    rejected_extensions = ['.pdf', '.doc', '.docx', '.xls', '.xlsx', '.XLSX', '.zip', '.rar', '.7z','.xlsm', '.jpg', '.png', '.gif', '.bmp', '.tiff', '.svg', '.webp']
 
     for a_tag in soup.find_all("a", href=True):
         url = urljoin(base_url, a_tag["href"])

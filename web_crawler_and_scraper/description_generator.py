@@ -56,6 +56,7 @@ checkpoint_file = "checkpoint.txt"
 description_directory = "./vector_db/descriptions"
 
 def generate_descriptions():
+    print("Generating descriptions...")
     if not os.path.exists(description_directory):
         os.makedirs(description_directory)
     
@@ -78,6 +79,7 @@ def generate_descriptions():
     resume_processing = last_processed is None
     for filename in sorted(os.listdir(directory)):
         if filename.endswith(".txt"):
+            print(f"Generating description for {filename}")
             # Check if processing should resume and limit files if max is set
             if resume_processing or filename == last_processed:
                 resume_processing = True
