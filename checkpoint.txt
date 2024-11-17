@@ -1,1 +1,2 @@
-_en_publications_sitepages_gazette.aspx.txt
+http://example.com
+current_filename.txt

@@ -8,6 +8,7 @@ from typing import Dict, List
 from web_crawler_and_scraper.crawl_n_scrape import scrape_website
 from web_crawler_and_scraper.format_files import process_files_in_directory
 from web_crawler_and_scraper.description_generator import generate_descriptions
+from vector_db.chroma import process_descriptions
 
 load_dotenv()
 os.environ['LANGCHAIN_TRACING_V2'] = 'true'
@@ -70,4 +71,5 @@ async def web_scrape(request: dict):
     scrape_website(url, page_limit)
     process_files_in_directory()
     generate_descriptions()
+    process_descriptions()
     return {"status": "ok"}

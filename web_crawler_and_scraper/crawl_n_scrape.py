@@ -25,7 +25,7 @@ visited = set()
 queue = Queue()
 
 # Global variables
-PAGE_LIMIT = 15  # Set this to an integer to limit the number of pages, or None for no limit
+PAGE_LIMIT = 5  # Set this to an integer to limit the number of pages, or None for no limit
 crawled_count = 0  # Counter for the number of pages crawled
 crawled_count_lock = threading.Lock()  # Lock for safe access to crawled_count
 
@@ -166,6 +166,7 @@ def worker(driver):
 # Main entry point
 def scrape_website(start_url, page_limit=None):
     print("Scraping website started")
+    update_checkpoint_file(start_url)
     # Initialize logs and directories
     global PAGE_LIMIT
     if page_limit:
@@ -194,3 +195,19 @@ def scrape_website(start_url, page_limit=None):
     rejected_log.close()
     crawled_log.close()
 
+def update_checkpoint_file(current_url, checkpoint_file='checkpoint.txt'):
+    # Check if the checkpoint file exists
+    if os.path.exists(checkpoint_file):
+        with open(checkpoint_file, 'r', encoding='utf-8') as file:
+            first_line = file.readline().strip()
+    else:
+        first_line = None
+
+    # Compare the first line with the current URL
+    if first_line != current_url:
+        # Empty the file and write the current URL
+        with open(checkpoint_file, 'w', encoding='utf-8') as file:
+            file.write(current_url + '\n')
+        print(f"Checkpoint file updated. New URL: {current_url}")
+    else:
+        print("Checkpoint file is up-to-date. No changes made.")

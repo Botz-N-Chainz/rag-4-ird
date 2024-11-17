@@ -58,17 +58,20 @@ description_directory = "./vector_db/descriptions"
 def generate_descriptions():
     if not os.path.exists(description_directory):
         os.makedirs(description_directory)
+    
     # Load last processed file from checkpoint
     if os.path.exists(checkpoint_file):
         with open(checkpoint_file, "r") as f:
-            last_processed = f.read().strip()
-            if not last_processed:
+            lines = f.readlines()
+            if len(lines) > 1:
+                last_processed = lines[1].strip()  # Read from the second line
+            else:
                 last_processed = None
     else:
         last_processed = None
 
     # Optional: Set an upper limit on the number of files to process
-    max_files_to_process = 50
+    max_files_to_process = 5
     files_processed = 0
 
     # Process files, starting from the checkpoint
@@ -110,9 +113,15 @@ def generate_descriptions():
                     print(f"Description for {filename} saved as {new_filename}\n")
                     
                     # Update checkpoint after successful processing
+                    with open(checkpoint_file, "r") as f:
+                        lines = f.readlines()
+                    if len(lines) > 1:
+                        lines[1] = f"{filename}\n"
+                    else:
+                        lines.append(f"{filename}\n")
                     with open(checkpoint_file, "w") as f:
-                        f.write(filename)
-
+                        f.writelines(lines)
+                        
                     files_processed += 1
                     if files_processed >= max_files_to_process:
                         print("Reached the maximum file processing limit.")

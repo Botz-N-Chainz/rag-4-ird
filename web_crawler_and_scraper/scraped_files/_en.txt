@@ -64,9 +64,7 @@ En
 <div>
 <div>
 <ul>
-<li><a href="/en"><span><span>Home</span><span>Currently selected</span></span></a></li><li><span><span><span>Recent</span></span></span><ul>
-<li><a href="/en/Lists/QuickFeedback/AllItems.aspx"><span><span>QuickFeedback</span></span></a></li>
-</ul></li><li><a href="/en/_layouts/15/viewlsts.aspx"><span><span>Site Contents</span></span></a></li><li><a href="https://www.ird.gov.lk/en/_layouts/15/RecycleBin.aspx?ql=1"><span><span>Recycle Bin</span></span></a></li>
+<li><a href="/en"><span><span>Home</span><span>Currently selected</span></span></a></li><li><span><span><span>Recent</span></span></span></li><li><a href="/en/_layouts/15/viewlsts.aspx"><span><span>Site Contents</span></span></a></li><li><a href="https://www.ird.gov.lk/en/_layouts/15/RecycleBin.aspx?ql=1"><span><span>Recycle Bin</span></span></a></li>
 </ul>
 </div>
 </div>
@@ -248,7 +246,7 @@ En
 <div>
 <h4>Latest News &amp; Notices</h4>
 <div>
-<h5>04-11-2024 – <span>Betting &amp; Gaming Levy (BGL)</span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/630/BNG04112024_E.pdf">Payment of Levy on the Gross Collection on Betting &amp; Gaming Business – October 2024</a></p><h5>23-10-2024 – <span>Notice to the Liquor License Holders</span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/629/PN_TC_2024-01_14102024_E.pdf">Tax Clearance Certificate for the Renewal of the Liquor License</a></p><h5>17-10-2024 – <span>Social Security Contribution Levy (SSCL)</span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/628/SSCL_18102024_24303_E.pdf">Making Payments for the Month of September – 2024</a></p><h5>17-10-2024 – <span>Value Added Tax (VAT) </span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/627/VAT17102024_24330_E.pdf">Making Payments and Furnishing Returns for the month of September 2024</a></p><h5>17-10-2024 – <span>Value Added Tax on Financial Services (VAT on FS)</span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/626/VATFS17102024_24090_E.pdf">Making Payments for the month of September 2024</a></p><h5>14-10-2024 – <span>Notice to Individual Income Taxpayers</span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/623/ITS14102024_E.pdf">Individual Income Tax Simplified Scheme (IITS)</a></p><h5>14-10-2024 – <span>Notice –Advanced Personal Income Tax (APIT), Advance Income Tax (AIT)/ Withholding Tax (WHT) (on Interest &amp; on fees and other) </span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/625/AIT_WHT_APIT_14102024_E.pdf">Make the Tax payments on or October July 15, 2024</a></p><h5>14-10-2024 – <span>Notice –Stamp Duty (SD)</span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/624/SD_14102024_24090_E.pdf">Statement of Stamp Duty Compounded and Payments</a></p><h5>10-10-2024 – <span>Notice – Income Tax(IIT,PIT&amp;CIT) </span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/622/IT_10102024_e-File_E.pdf">Filing of Return of Income Y/A 2023/2024 - “e-Services” available for filing IIT, PIT &amp; CIT Returns </a></p><h5>04-10-2024 – <span>Notice – Income Tax (IIT) </span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/621/IT_04102024_Awareness_IIT_E.pdf">The awareness program on submitting Individual Income Tax Return via e-Filling - Year of Assessment: 2023/2024</a></p>
+<h5>12-11-2024 – <span>Notice – Income Tax (IIT, PIT &amp; CIT) </span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/633/IT12112024_E.jpg">Filing of Return of Income Y/A 2023/2024 </a></p><h5>12-11-2024 – <span>Notice –Advanced Personal Income Tax (APIT), Advance Income Tax (AIT)/ Withholding Tax (WHT) (on Interest &amp; on fees and other) </span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/632/AIT_WHT_APIT_12112024_E.pdf">Make the Tax payments on or before November 15, 2024</a></p><h5>12-11-2024 – <span>Notice to Public </span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/631/DTA_CZECH_REPUBLIC_E.jpg">New Agreement between the Government of the Democratic Socialist Republic of Sri Lanka and the Government of the Czech Republic for the Elimination of Double Taxation with respect to Taxes on Income and the prevention of Tax Evasion and Avoidance</a></p><h5>04-11-2024 – <span>Betting &amp; Gaming Levy (BGL)</span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/630/BNG04112024_E.pdf">Payment of Levy on the Gross Collection on Betting &amp; Gaming Business – October 2024</a></p><h5>23-10-2024 – <span>Notice to the Liquor License Holders</span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/629/PN_TC_2024-01_14102024_E.pdf">Tax Clearance Certificate for the Renewal of the Liquor License</a></p><h5>17-10-2024 – <span>Social Security Contribution Levy (SSCL)</span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/628/SSCL_18102024_24303_E.pdf">Making Payments for the Month of September – 2024</a></p><h5>17-10-2024 – <span>Value Added Tax (VAT) </span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/627/VAT17102024_24330_E.pdf">Making Payments and Furnishing Returns for the month of September 2024</a></p><h5>17-10-2024 – <span>Value Added Tax on Financial Services (VAT on FS)</span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/626/VATFS17102024_24090_E.pdf">Making Payments for the month of September 2024</a></p><h5>14-10-2024 – <span>Notice to Individual Income Taxpayers</span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/623/ITS14102024_E.pdf">Individual Income Tax Simplified Scheme (IITS)</a></p><h5>14-10-2024 – <span>Notice –Advanced Personal Income Tax (APIT), Advance Income Tax (AIT)/ Withholding Tax (WHT) (on Interest &amp; on fees and other) </span></h5><p><a href="https://www.ird.gov.lk/en/Lists/Latest News  Notices/Attachments/625/AIT_WHT_APIT_14102024_E.pdf">Make the Tax payments on or October July 15, 2024</a></p>
 </div>
 <a href="/en/sitepages/News%20and%20Notices.aspx">More &gt;&gt;</a>
 </div>
@@ -300,41 +298,6 @@ Last updated:
 </div>
 </div>
 </div>
-</div>
-<div>
-<div>
-<div>
-<div>
-<button type="button">
-<div>
-Help us improve
-</div></button>
-</div>
-</div>
-</div>
-<div>
-<div>
-<div>
-<div>
-<div>
-<h5>Rate your experience</h5>
-<button type="button">
-<span>×</span>
-</button>
-</div>
-<div><span>Not Satisfied</span><span>Very Satisfied</span></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div>
-<div>
-Thank You! <a href="../sitepages/feedback.aspx">Tell Us More !!</a>
-</div>
-<button type="button">
-<span>×</span>
-</button>
 </div>
 </div>
 <div>
